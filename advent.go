@@ -6,7 +6,8 @@ import (
   )
 
 func main() {
-    advent1a()
+    //advent1a()
+	advent2a()
 }
 
 func adventTemplate() {
