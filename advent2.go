@@ -13,7 +13,7 @@ func advent2a() {
 		"blue": 14,
 	}
 	sum := 0
-	content, _ := readFile("2atest.txt")
+	content, _ := readFile("2a.txt")
 	fmt.Println(content)
 	lines := strings.Split(content, "\n")
 	for _, line := range lines {
