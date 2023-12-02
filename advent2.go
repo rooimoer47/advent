@@ -46,3 +46,41 @@ func advent2a() {
 	}
 	fmt.Println(sum)
 }
+
+func advent2b() {
+	sum := 0
+	content, _ := readFile("2a.txt")
+	fmt.Println(content)
+	lines := strings.Split(content, "\n")
+	for _, line := range lines {
+		limitMap := map[string]int{
+			"red": -1,
+			"green": -1,
+			"blue": -1,
+		}
+		sets := strings.Split(strings.TrimSpace(strings.Split(line, ":")[1]), ";")
+		for _, set := range sets {
+			cubes := strings.Split(set, ",")
+			for _, cube := range cubes {
+				digit, err := strconv.Atoi(strings.Split(strings.TrimSpace(cube), " ")[0])
+				if err != nil {
+					fmt.Println("Error:", err)
+				  }
+				colour := strings.Split(strings.TrimSpace(cube), " ")[1]
+				if digit > limitMap[colour] {
+					limitMap[colour] = digit
+				}
+			}
+		}
+		prod := 1
+		for _, lim := range limitMap {
+			if (lim > -1) {
+				prod *= lim
+			}
+		}
+		if (prod > 1) {
+			sum += prod
+		}
+	}
+	fmt.Println(sum)
+}

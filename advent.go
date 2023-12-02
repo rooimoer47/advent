@@ -7,7 +7,7 @@ import (
 
 func main() {
     //advent1a()
-	advent2a()
+	advent2b()
 }
 
 func adventTemplate() {
