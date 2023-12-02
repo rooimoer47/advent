@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
   )
 
 func main() {
@@ -10,7 +10,7 @@ func main() {
 }
 
 func adventTemplate() {
-	data, err := ioutil.ReadFile("temp.txt")
+	data, err := os.ReadFile("temp.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -20,7 +20,7 @@ func adventTemplate() {
 }
 
 func advent1a() {
-	data, err := ioutil.ReadFile("1b.txt")
+	data, err := os.ReadFile("1b.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
